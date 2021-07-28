@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type="text/javascript" src="jquery-3.6.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        :root {
+            --bs-blue: #0d6efd;
+            --bs-indigo: #6610f2;
+            --bs-purple: #6f42c1;
+            --bs-pink: #d63384;
+            --bs-red: #dc3545;
+            --bs-orange: #fd7e14;
+            --bs-yellow: #ffc107;
+            --bs-green: #198754;
+            --bs-teal: #20c997;
+            --bs-cyan: #0dcaf0;
+            --bs-white: #fff;
+            --bs-gray: #6c757d;
+            --bs-gray-dark: #343a40;
+            --bs-primary: #0d6efd;
+            --bs-secondary: #6c757d;
+            --bs-success: #198754;
+            --bs-info: #0dcaf0;
+            --bs-warning: #ffc107;
+            --bs-danger: #dc3545;
+            --bs-light: #f8f9fa;
+            --bs-dark: #212529;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        h2 {
+            text-align: center;
+            font-variant: small-caps;
+            font-size: 30px;
+            margin-top: 20px;
+            color: red;
+        }
+
+        form {
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 10px;
+            /* border: 1px solid blue; */
+            /* background-color:  var(--bs-primary); */
+        }
+
+        form select {
+            width: 90%;
+            margin: auto;
+            height: 35px;
+            margin-top: 10px;
+        }
+
+        select {
+            font-size: 18px;
+
+        }
+
+        input[type='button'] {
+            height: 40px;
+            color: blue;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: cursive;
+            /* background-color : white; */
+            /* border-style : solid; */
+        }
+
+        .container {
+            width: 96%;
+            height: 500px;
+            margin: auto;
+            /* border : 1px solid blue; */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+
+            overflow: auto;
+            margin-bottom: 20px;
+            padding: 4px;
+
+        }
+
+        .container .items h2 {
+            color: white;
+            font-size: 20px;
+
+        }
+
+        .container .items p {
+            color: white;
+            text-align: center;
+            margin: auto;
+            width: 90%;
+            position: absolute;
+            bottom: 20px;
+            left: 5%;
+        }
+
+        .container .items {
+            background-color: blue;
+            width: 45%;
+            height: 140px;
+            margin: 5px;
+            position: relative;
+
+            transition: all .01s linear;
+            overflow: hidden;
+        }
+
+        .container .items:hover {
+            box-shadow: 0 0 10px gray;
+            opacity: 0.91;
+
+        }
+
+        .container .items:hover h2 {
+            font-size: 2rem;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-variant: small-caps;
+            color: red;
+            font-weight: bold;
+        }
+
+        .container .items:nth-child(1),
+        .items:nth-child(4) {
+            background-color: var(--bs-warning);
+        }
+
+        .container .items:nth-child(2),
+        .items:nth-child(5) {
+            background-color: var(--bs-danger);
+        }
+
+        .container .items:nth-child(3),
+        .items:nth-child(6) {
+            background-color: var(--bs-success);
+        }
+
+
+        .container .items .ok {
+            width: 90%;
+            height: 4px;
+            position: absolute;
+            left: 5%;
+            bottom: 18px;
+            overflow: hidden;
+            background-color: rgb(214, 212, 212);
+        }
+
+        .underline {
+            background-color: black;
+            height: 4px;
+            width: 100%;
+            position: absolute;
+            left: -100%;
+            transition: all 1s ease;
+        }
+
+        .container .items:hover .underline {
+            left: 0%;
+        }
+
+        /* Media  */
+        @media (max-width: 500px) {
+            .container .items {
+                width: 90%;
+            }
+
+            .container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Covid 19</h2>
+    <form name="myForm">
+        <select label="Select Country">
+            <option label="Select Country" value="-1"></option>
+        </select>
+        <!-- <input type='button' value='Search'> -->
+    </form>
+    <br>
+    <p>Date </p>
+    <div class="container">
+        <div class="items">
+            <h2> New Confirmed</h2>
+            <p></p>
+            <div class='ok'>
+                <div class="underline"> </div>
+            </div>
+        </div>
+        <div class="items">
+            <h2> New Deaths</h2>
+            <p> </p>
+            <div class='ok'>
+                <div class="underline"> </div>
+            </div>
+        </div>
+        <div class="items">
+            <h2> New Recovered</h2>
+            <p> </p>
+            <div class='ok'>
+                <div class="underline"> </div>
+            </div>
+        </div>
+        <div class="items">
+            <h2> Total Confirmed</h2>
+            <p> </p>
+            <div class='ok'>
+                <div class="underline"> </div>
+            </div>
+        </div>
+        <div class="items">
+            <h2> Total Deaths</h2>
+            <p> </p>
+            <div class='ok'>
+                <div class="underline"> </div>
+            </div>
+        </div>
+        <div class="items">
+            <h2> Total Recovered</h2>
+            <p> </p>
+            <div class='ok'>
+                <div class="underline"> </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            // console.log('ready function')
+            init();
+
+            function init() {
+                let url = 'https://api.covid19api.com/summary';
+                $.get(url, function (data) {
+                    // console.log(data)
+                    data.Countries.forEach(function (countries, index) {
+                        let option = `<option value=${index}> ${countries.Country} </option>`;
+                        $('select').append(option)
+                    })
+
+                    $('select').change(function () {
+                        let list = document.querySelectorAll('p');
+                        let index = $('select').val();
+                        if (index != -1) {
+                            // console.log(list)
+                            let data1 = data.Countries[index]; // countries
+                            // console.log('data', data)
+                            // console.log(Object.keys(data1))
+                            Object.keys(data1).forEach(function (arr, index) {
+                                if (index >= 4 && index < 10) {
+                                    // console.log(arr, data1[arr])
+                                    list[index - 3].textContent = data1[arr];
+                                }
+                            });
+                            list[0].textContent = 'Date : ' + data1['Date'];
+                        }
+                    })
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
